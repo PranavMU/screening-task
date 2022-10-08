@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main__div">
+        <h4>screening task</h4>
+        <div class="main__content">
+            <div class="content__text">
+                <h1 id="counting" >Hello World</h1>
+            </div>
+            <div class="content__buttons">
+                <button onclick="start()" >Start</button>
+                <button onclick="stop()" >Stop</button>
+                <button onclick="reset()" >Reset</button>
+            </div>
+        </div>
+        </div>
+    </div>
+     <!-- JavaScript code-->
+     <script>
+        
+        var data = 0;
+        var str="Hello World"
+        var timer = null;
+        //string appending with number function
+        function start() {
+            timer = setInterval(()=> {
+                    data = data + 1;
+                    document.getElementById("counting").innerText = str +" : "+ data
+                    }, 1000);
+            
+        }
+
+        //for clearing interval
+        function stop(){
+            window.clearInterval(timer);
+        }
+
+        //Reset function
+        function reset() {
+            stop()
+            document.getElementById("counting").innerText = str;
+            data=0
+        }
+    </script>
+</body>
+</html>
